@@ -1,4 +1,4 @@
-package com.com.homework05;
+package com.example04;
 
 public class User {
     private int id;

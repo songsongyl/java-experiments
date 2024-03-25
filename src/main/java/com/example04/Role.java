@@ -1,9 +1,8 @@
-package com.com.homework05;
+package com.example04;
 
-public class Game {
+public class Role {
     private String name;
     private int id;
-    private String describe;
     public void setName(String name){
         this.name = name;
     }
@@ -15,11 +14,5 @@ public class Game {
     }
     public int getId(){
         return id;
-    }
-    public void setDescribe(String describe){
-        this.describe = describe;
-    }
-    public String getDescribe(){
-        return describe;
     }
 }
