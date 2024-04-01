@@ -10,11 +10,14 @@ public class Test {
 //        seller1.setSalary(3000);
 //        seller1.setCount(20000);
 //        seller1.setCommission(0.15);
+        System.out.println(manager1.getName());
         manager1.updateName("ssyyll");
+        System.out.println("改名为：");
         System.out.println(manager1.getName());
         Employee[] employees = {manager1 , seller1};
        double total = SalaryService.getTotalSalaries(manager1 , seller1);
      //  Employee[] employees = {manager1 , seller1};
+        System.out.println("总工资为：");
         System.out.println(total);
     }
 }
