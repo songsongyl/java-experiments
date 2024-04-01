@@ -4,7 +4,6 @@ import com.example05.S;
 
 public class Botton extends View{
 private String name;
-
     public String getName() {
         return name;
     }
