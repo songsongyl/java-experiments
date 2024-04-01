@@ -1,4 +1,4 @@
-package example06;
+package com.example06;
 
 public  class SalaryService {
     public static  double getTotalSalaries(Employee... employees){

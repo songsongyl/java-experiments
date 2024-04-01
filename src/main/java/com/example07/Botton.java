@@ -1,6 +1,4 @@
-package example07;
-
-import com.example05.S;
+package com.example07;
 
 public class Botton extends View{
 private String name;

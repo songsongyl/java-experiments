@@ -1,4 +1,4 @@
-package example06;
+package com.example06;
 
 public class Employee implements Workable{
     private String name;

@@ -1,4 +1,4 @@
-package example07;
+package com.example07;
 
 public class View {
     private Clickable clickable;
