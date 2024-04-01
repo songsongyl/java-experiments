@@ -13,7 +13,7 @@ public class Test {
         manager1.updateName("ssyyll");
         System.out.println(manager1.getName());
         Employee[] employees = {manager1 , seller1};
-       double total = SalaryService.getTotalSalaries(employees);
+       double total = SalaryService.getTotalSalaries(manager1 , seller1);
      //  Employee[] employees = {manager1 , seller1};
         System.out.println(total);
     }

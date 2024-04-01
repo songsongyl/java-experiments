@@ -8,7 +8,9 @@ public class Manager extends Employee{
     }
 
     public double calculateSalary(double salary){
-        return salary*level*0.8;
+        super.setSalary(super.getSalary() * level *0.8);
+        return super.getSalary();
+        //return salary*level*0.8;
     }
 
 
