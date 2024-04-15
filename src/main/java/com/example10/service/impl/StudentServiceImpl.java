@@ -4,8 +4,10 @@ import com.example10.resource.DatabaseUtils;
 import com.example10.service.StudentService;
 
 import java.util.Comparator;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class StudentServiceImpl implements StudentService {
    public List<Student> addStudent(Student student){
@@ -30,17 +32,27 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public Map<Student.Sex, List<Student>> listStudentsMapBySex() {
-        return null;
+       return DatabaseUtils.listStudents().stream().collect(Collectors.groupingBy(Student::getSex));
     }
 
     @Override
     public Map<Integer, Student> listStudentsByYearMapById(int year) {
-        return null;
+        return DatabaseUtils.listStudents().stream().filter(student -> student.getYear() == year).collect(Collectors.toMap(Student::getId,student -> student));
     }
 
     @Override
     public boolean removeStudent(int id) {
-        return false;
+        Iterator<Student> studentIterator = DatabaseUtils.listStudents().iterator();
+        boolean b = false;
+        while (studentIterator.hasNext()){
+            Student student = studentIterator.next();
+            if(id == student.getId()){
+                studentIterator.remove();
+                b = true;
+            }
+        }
+       return b;
+//        DatabaseUtils.listStudents().stream().filter(student -> student.getId()!=id).toList();
     }
 
 }
