@@ -1,4 +1,4 @@
-package com.example10;
+package com.example10.entity;
 
 public class Student {
     public enum Sex{
@@ -7,19 +7,18 @@ public class Student {
     private int id;
     private String name;
     private Sex sex;
+    int year;
 
-    public Student(int id, String name, Sex sex) {
+    public Student(int id, Sex sex, String name, int year) {
         this.id = id;
-        this.name = name;
         this.sex = sex;
+        this.name = name;
+        this.year = year;
+
     }
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -34,7 +33,7 @@ public class Student {
         return sex;
     }
 
-    public void setSex(Sex sex) {
-        this.sex = sex;
+    public int getYear() {
+        return year;
     }
 }
