@@ -1,7 +1,7 @@
-package com.example10.service.impl;
-import com.example10.entity.Student;
-import com.example10.resource.DatabaseUtils;
-import com.example10.service.StudentService;
+package com.example04.service.impl;
+import com.example04.entity.Student;
+import com.example04.resource.DatabaseUtils;
+import com.example04.service.StudentService;
 
 import java.util.Comparator;
 import java.util.Iterator;

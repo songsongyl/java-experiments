@@ -1,4 +1,4 @@
-package com.example10.entity;
+package com.example04.entity;
 
 public class Student {
     public enum Sex{

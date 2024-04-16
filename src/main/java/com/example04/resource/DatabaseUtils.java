@@ -1,5 +1,5 @@
-package com.example10.resource;
-import com.example10.entity.Student;
+package com.example04.resource;
+import com.example04.entity.Student;
 import java.util.List;
 import java.util.ArrayList;
 public class DatabaseUtils {
