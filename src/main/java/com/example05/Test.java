@@ -1,6 +1,8 @@
 package com.example05;
 
+import com.example05.entity.College;
 import com.example05.entity.Student;
+import com.example05.entity.Teacher;
 import com.example05.resource.DatabaseUtils;
 
 import java.util.List;
@@ -8,7 +10,8 @@ import java.util.Optional;
 
 public class Test {
     public static void main(String[] args){
-      getCollegeName(DatabaseUtils.listStudents().get(0));
+    String name =   getCollegeName(DatabaseUtils.listStudents().get(0));
+        System.out.println(name);
      System.out.println(DatabaseUtils.listStudents().get(0).getTeacher().getCollege().getName());
        System.out.println(isTeacher(DatabaseUtils.listStudents().get(1),"ll"));
       System.out.println(getCollegeName(DatabaseUtils.listStudents(),1));
@@ -25,14 +28,15 @@ public class Test {
 //                .filter(student1 -> student.getTeacher().getCollege().getName().equals(student.getTeacher().getCollege().getName()))
 //                .map(student2 -> student2.getTeacher().getCollege().getName())
 //                .toString();
-        Optional<Student> optionalStudent = Optional.ofNullable(student);
-         optionalStudent.ifPresentOrElse(  student1 -> {
-             System.out.println(student1.getTeacher().getCollege().getName());
-
-         },()->{
-             System.out.println("未知学院");
-         });
-        return null;
+//        Optional<Student> optionalStudent = Optional.ofNullable(student);
+//         optionalStudent.ifPresentOrElse(  student1 -> {
+//             System.out.println(student1.getTeacher().getCollege().getName());
+//
+//         },()->{
+//             System.out.println("未知学院");
+//         });
+//        return null;
+      return   Optional.ofNullable(student).map(Student::getTeacher).map(Teacher::getCollege).map(College::getName).orElse("未知学院");
     }
     /**
      * 基于给定学生及教师姓名，判断是否为给定学生的指导教师。
@@ -57,7 +61,7 @@ public class Test {
               .findFirst()
              // .ifPresentOrElse(student -> System.out.println(student.getTeacher().getCollege().getName()),()-> System.out.println("未知学院"));
               .map(student -> student.getTeacher().getCollege().getName())
-              .get();
+              .orElse("未知学院");
              // return null;
 
 
